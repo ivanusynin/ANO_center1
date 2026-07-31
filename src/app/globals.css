@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Brand palette: АНО «Центр медицинских компетенций» ----------
+   #FFFFFF  — основной фон (страницы)
+   #222222  — основной текст
+   #0DEACF  — акцент (иконки, обводки, поверх тёмных плашек;
+              НЕ использовать для сплошного текста на белом)
+   #1E465B  — CTA-кнопки («Зарегистрироваться», «Купить билет»)
+   #F0F1F2  — плашки, карточки, таймлайн
+   #0D3E2B  — фирменный компаньон, заголовки секций H2
+   #FF6B35  — энергичный акцент (для ранних продаж и горячих анонсов)
+*/
+@layer base {
+  :root {
+    --background: 0 0% 100%;            /* #FFFFFF */
+    --foreground: 0 0% 13%;             /* #222222 */
+
+    --card: 210 6% 95%;                 /* #F0F1F2 — плашки и карточки */
+    --card-foreground: 0 0% 13%;        /* #222222 */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 199 49% 23%;             /* #1E465B — CTA */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 158 64% 15%;           /* #0D3E2B — фирменный компаньон */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 172 91% 48%;              /* #0DEACF — яркий бирюзово-зелёный */
+    --accent-foreground: 158 64% 15%;   /* #0D3E2B — текст на бирюзовой плашке */
+
+    --muted: 210 6% 95%;                /* #F0F1F2 */
+    --muted-foreground: 0 0% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 6% 88%;
+    --input: 210 6% 88%;
+    --ring: 199 49% 23%;                /* #1E465B — фокус-кольцо */
+
+    --radius: 0.75rem;
+
+    /* Дополнительные брендовые токены (выходят за пределы shadcn-палитры) */
+    --brand: 158 64% 15%;               /* #0D3E2B */
+    --brand-foreground: 0 0% 100%;
+    --energy: 16 100% 60%;              /* #FF6B35 */
+    --energy-foreground: 0 0% 100%;
+    --ivory: 33 100% 95%;               /* #FFF3E0 — фон цитат */
+    --ink: 158 64% 15%;                 /* тёмная плашка для бирюзового акцента */
+
+    --chart-1: 199 49% 23%;
+    --chart-2: 158 64% 15%;
+    --chart-3: 172 91% 48%;
+    --chart-4: 16 100% 60%;
+    --chart-5: 199 30% 50%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 13%;
+    --sidebar-primary: 199 49% 23%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 6% 95%;
+    --sidebar-accent-foreground: 0 0% 13%;
+    --sidebar-border: 210 6% 88%;
+    --sidebar-ring: 199 49% 23%;
+  }
+
+  .dark {
+    --background: 158 30% 8%;
+    --foreground: 0 0% 96%;
+    --card: 158 30% 12%;
+    --card-foreground: 0 0% 96%;
+    --popover: 158 30% 10%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 172 91% 48%;
+    --primary-foreground: 158 64% 15%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 158 64% 15%;
+    --accent: 172 91% 48%;
+    --accent-foreground: 158 64% 15%;
+    --muted: 158 30% 16%;
+    --muted-foreground: 0 0% 70%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 96%;
+    --border: 158 30% 22%;
+    --input: 158 30% 22%;
+    --ring: 172 91% 48%;
+    --brand: 172 91% 48%;
+    --brand-foreground: 158 64% 15%;
+    --energy: 16 100% 60%;
+    --energy-foreground: 0 0% 100%;
+    --ivory: 33 60% 16%;
+    --ink: 158 30% 6%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    color: hsl(var(--brand));
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-brand {
+    color: hsl(var(--brand));
+  }
+  .bg-brand {
+    background-color: hsl(var(--brand));
+  }
+  .border-brand {
+    border-color: hsl(var(--brand));
+  }
+  .text-energy {
+    color: hsl(var(--energy));
+  }
+  .bg-energy {
+    background-color: hsl(var(--energy));
+  }
+  .bg-ivory {
+    background-color: hsl(var(--ivory));
+  }
+  .bg-ink {
+    background-color: hsl(var(--ink));
+  }
+  .text-accent-on-ink {
+    color: hsl(var(--accent));
+  }
+  .border-accent {
+    border-color: hsl(var(--accent));
+  }
+  .bg-accent-on-ink {
+    background-color: hsl(var(--accent));
+  }
+  .ring-accent {
+    box-shadow: 0 0 0 3px hsl(var(--accent) / 0.45);
+  }
+  .bg-brand-gradient {
+    background-image: linear-gradient(135deg, hsl(var(--brand)) 0%, hsl(var(--primary)) 100%);
+  }
+  .bg-brand-gradient-soft {
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--brand) / 0.04) 0%,
+      hsl(var(--primary) / 0.05) 100%
+    );
+  }
+  .bg-brand-gradient-ink {
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--brand)) 0%,
+      hsl(158 50% 8%) 100%
+    );
+  }
+}
