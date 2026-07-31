@@ -280,8 +280,8 @@ export const EVENTS: EventItem[] = [
 
 export const CONTACTS = {
   address: "620014, Екатеринбург, ул. Репина, 3, кабинет 412",
-  phone: "+7 (343) 555-08-08",
-  phoneHref: "tel:+73435550808",
+  phone: "+7 (343) 214-85-75",
+  phoneHref: "tel:+73432148575",
   email: "office@cmk-ekb.ru",
   emailHref: "mailto:office@cmk-ekb.ru",
   hours: "Пн–Пт, 09:00–18:00",
